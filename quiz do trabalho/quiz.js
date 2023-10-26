@@ -1,4 +1,4 @@
-var tempoLimite = 10; // Tempo limite de resposta em segundos
+var tempoLimite = 30; // Tempo limite de resposta em segundos
 var contador = tempoLimite;
 var temporizador;
 var respostas = []; // Array para armazenar as respostas do usuário
@@ -19,14 +19,14 @@ var perguntas = [
         respostaCorreta: 'D'
     },
     {
-        pergunta: 'Em que ano o Brasil ganhou sua primeira Copa do Mundo?',
+        pergunta: 'Em que ano o Brasil ganhou a sua primeira Copa do Mundo?',
         opcoes: ['a) 1958', 'b) 1970', 'c) 1962', 'd) 1994'],
         imagem: 'pergunta3.jpg',
         respostaCorreta: 'A'
     },
     {
         pergunta: 'Qual país foi campeão da Copa do Mundo de 2006?',
-        opcoes: ['a) Brasil', 'b) França', 'c) Italia', 'd) Argentina'],
+        opcoes: ['a) Brasil', 'b) França', 'c) Itália', 'd) Argentina'],
         imagem: 'pergunta4.jpg',
         respostaCorreta: 'C'
     },
@@ -37,31 +37,31 @@ var perguntas = [
         respostaCorreta: 'A'
     },
     {
-        pergunta: 'Que jogador ganhou a bola de ouro de 2015?',
+        pergunta: 'Qual jogador ganhou a bola de ouro de 2015?',
         opcoes: ['a) Cristiano Ronaldo', 'b) Messi', 'c) Neymar', 'd) Griezmann'],
         imagem: 'pergunta6.jpg',
         respostaCorreta: 'B'
     },
     {
-        pergunta: 'Em qual país foi descoberto o futebol?',
+        pergunta: 'Qual país foi inventol o futebol?',
         opcoes: ['a) Brasil', 'b) Alemanha', 'c) França', 'd) Inglaterra'],
         imagem: 'pergunta7.jpg',
         respostaCorreta: 'D'
     },
     {
-        pergunta: 'Quantas copas do mundo a Itália já ganhou',
+        pergunta: 'Quantas copas do mundo a Itália já ganhou?',
         opcoes: ['a) 2', 'b) 4', 'c) 1', 'd) 3'],
         imagem: 'pergunta8.jpg',
         respostaCorreta: 'B'
     },
     {
-        pergunta: 'Quantas Champions League tem o Real Madrid',
+        pergunta: 'Quantas Champions League têm o Real Madrid?',
         opcoes: ['a) 9', 'b) 12', 'c) 14', 'd) 13'],
         imagem: 'pergunta9.jpeg',
         respostaCorreta: 'C'
     },
     {
-        pergunta: 'Qual foi o pais onde aconteceu a Copa do mundo de 2002?',
+        pergunta: 'Qual foi o país onde aconteceu final da Copa do mundo de 2002?',
         opcoes: ['a) Alemanha', 'b) Brasil', 'c) Japão', 'd) Espanha'],
         imagem: 'pergunta10.jpeg',
         respostaCorreta: 'C'
@@ -79,7 +79,7 @@ var perguntas = [
         respostaCorreta: 'C' // Itália
       },
       {
-        pergunta: 'Qual jogador é conhecido como "Rei" e tem 3 Copas do Mundo em seu currículo?',
+        pergunta: 'Qual jogador é conhecido como "Rei do Futebol" e tem 3 Copas do Mundo em seu currículo?',
         opcoes: ['a) Lionel Messi', 'b) Diego Maradona', 'c) Pelé', 'd) Cristiano Ronaldo'],
         imagem: 'pergunta13.jpg',
         respostaCorreta: 'C' // Pelé
