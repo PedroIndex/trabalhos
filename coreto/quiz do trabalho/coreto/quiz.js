@@ -1,107 +1,106 @@
-var tempoLimite = 5;
+var tempoLimite = 30; // Tempo limite de resposta em segundos
 var contador = tempoLimite;
 var temporizador;
-var respostas = [];
-var pontos = 0;
-var pontosPerdidos = -2;
+var respostas = []; // Array para armazenar as respostas do usuário
+var pontos = 0; // Pontuação inicial
+var pontosPerdidos = -2; // Pontos perdidos quando o tempo acaba
 
 var perguntas = [
     {
-        pergunta: 'Qual o nome do jogador acima?',
-        opcoes: ['a) Stephen Curry', 'b) Jayson Tatum', 'c) Lebron James', 'd) Kevin Durant'],
-        imagem: 'Kevin Durant.webp',
-        respostaCorreta: 'D' //Kd
+        pergunta: 'Qual time é do Rio de Janeiro?',
+        opcoes: ['a) São Paulo', 'b) Palmeiras', 'c) Santos', 'd) Flamengo'],
+        imagem: 'pergunta1.webp',
+        respostaCorreta: 'D'
     },
     {
-        pergunta: 'Qual o nome do jogador que deixou Michael Jordan perdido no crossover?',
-        opcoes: ['a) Allen Iverson', 'b) Kyrie Irving', 'c) Shaq O´neal', 'd) Magic Jhonson'],
-        imagem: '2.jfif',
+        pergunta: 'Qual time não tem Libertadores?',
+        opcoes: ['a) Flamengo', 'b) Vasco', 'c) Internacional', 'd) Fluminense'],
+        imagem: 'pergunta2.jpg',
+        respostaCorreta: 'D'
+    },
+    {
+        pergunta: 'Em que ano o Brasil ganhou a sua primeira Copa do Mundo?',
+        opcoes: ['a) 1958', 'b) 1970', 'c) 1962', 'd) 1994'],
+        imagem: 'pergunta3.jpg',
         respostaCorreta: 'A'
     },
     {
-        pergunta: 'Quantas cestas de 3 pontos Shaq O´neal fez ao total em sua carreira da NBA?',
-        opcoes: ['a) 5', 'b) 2', 'c) 1', 'd) 3'],
-        imagem: 'shaq.jfif',
+        pergunta: 'Qual país foi campeão da Copa do Mundo de 2006?',
+        opcoes: ['a) Brasil', 'b) França', 'c) Itália', 'd) Argentina'],
+        imagem: 'pergunta4.jpg',
         respostaCorreta: 'C'
     },
     {
-        pergunta: 'Qual a marca patrocinadora das bolas da NBA?',
-        opcoes: ['a) Nike', 'b) Spalding', 'c) Penalty', 'd) Wilson'],
-        imagem: 'bola nba.jfif',
-        respostaCorreta: 'D'
-    },
-    {
-        pergunta: ' Em que ano Ja Morant foi draftado?',
-        opcoes: ['a) 2018', 'b) 2017', 'c) 2019', 'd) 2020'],
-        imagem: 'ja morant.jfif',
-        respostaCorreta: 'C'
-    },
-    {
-        pergunta: 'Qual o time atual de Kyrie Irving?',
-        opcoes: ['a) Maveric Dallas', 'b) Boston Celtics', 'c) Clivers', 'd) Brooklyn Nets'],
-        imagem: 'kyrie irving.jfif',
+        pergunta: 'Em qual time Neymar foi revelado?',
+        opcoes: ['a) Santos', 'b) Barcelona', 'c) Palmeiras', 'd) Flamengo'],
+        imagem: 'pergunta5.jpg',
         respostaCorreta: 'A'
     },
     {
-        pergunta: 'Qual o nome do jogador acima?',
-        opcoes: ['a) Antony Davis ', 'b) Steve Adams ', 'c) Myles Turner', 'd) Kevin Love'],
-        imagem: 'steve adamns.jfif',
-        respostaCorreta: 'B' //steve adams
-    },
-    {
-        pergunta: 'Quantos títulos da NBA Kobe Bryant já conquistou?',
-        opcoes: ['a) 2', 'b) 3', 'c) 4', 'd) 5'],
-        imagem: 'kobe.jfif',
-        respostaCorreta: 'D'
-    },
-    {
-        pergunta: 'Quantas vezes Kobe Bryant foi MVP?',
-        opcoes: ['a) 3', 'b) 1', 'c) 2', 'd) 0'],
-        imagem: 'kobemvp.jpg',
+        pergunta: 'Qual jogador ganhou a bola de ouro de 2015?',
+        opcoes: ['a) Cristiano Ronaldo', 'b) Messi', 'c) Neymar', 'd) Griezmann'],
+        imagem: 'pergunta6.jpg',
         respostaCorreta: 'B'
     },
     {
-        pergunta: 'Quem é o maior cestinha da NBA?',
-        opcoes: ['a) Stephen Curry', 'b) LeBron James ', 'c) Kareem Abdul-jb', 'd) Michael Jordan'],
-        imagem: 'pontos.jpg',
-        respostaCorreta: 'B'
-    },
-    {
-        pergunta: 'Quem detém o recorde de mais pontos marcados em uma única partida da NBA?',
-        opcoes: ['a) LeBron James', 'b) Wilt Chamberlain', 'c) Kobe Bryant', 'd) Larry Bird'],
-        imagem: 'pontos-record.jpg',
-        respostaCorreta: 'B' // Wilt Chamberlain
-    },
-    {
-        pergunta: 'Qual equipe da NBA é conhecida como os "Splash Brothers"?',
-        opcoes: ['a) Los Angeles Lakers', 'b) Houston Rockets', 'c) Golden State Warriors', 'd) Chicago Bulls'],
-        imagem: 'splash-brothers.jpg',
-        respostaCorreta: 'C' // Golden State Warriors
-    },
-    {
-        pergunta: 'Qual jogador é famoso por seu apelido "The Answer"?',
-        opcoes: ['a) Kobe Bryant', 'b) Allen Iverson', 'c) Tim Duncan', 'd) Shaquille O\'Neal'],
-        imagem: 'the-answer.jpg',
-        respostaCorreta: 'B' // Allen Iverson
-    },
-    {
-        pergunta: 'Quantos campeonatos da NBA o Chicago Bulls ganhou nos anos 1990, com Michael Jordan no time?',
-        opcoes: ['a) 3', 'b) 4', 'c) 5', 'd) 6'],
-        imagem: 'chicago-bulls.jpg',
+        pergunta: 'Qual país foi inventol o futebol?',
+        opcoes: ['a) Brasil', 'b) Alemanha', 'c) França', 'd) Inglaterra'],
+        imagem: 'pergunta7.jpg',
         respostaCorreta: 'D'
     },
     {
-        pergunta: 'Qual jogador detém o recorde de mais assistências na história da NBA?',
-        opcoes: ['a) Magic Johnson', 'b) Chris Paul', 'c) John Stockton', 'd) Steve Nash'],
-        imagem: 'assistencias.jpg',
-        respostaCorreta: 'C' // John Stockton
-    }
-
+        pergunta: 'Quantas copas do mundo a Itália já ganhou?',
+        opcoes: ['a) 2', 'b) 4', 'c) 1', 'd) 3'],
+        imagem: 'pergunta8.jpg',
+        respostaCorreta: 'B'
+    },
+    {
+        pergunta: 'Quantas Champions League têm o Real Madrid?',
+        opcoes: ['a) 9', 'b) 12', 'c) 14', 'd) 13'],
+        imagem: 'pergunta9.jpeg',
+        respostaCorreta: 'C'
+    },
+    {
+        pergunta: 'Qual foi o país onde aconteceu final da Copa do mundo de 2002?',
+        opcoes: ['a) Alemanha', 'b) Brasil', 'c) Japão', 'd) Espanha'],
+        imagem: 'pergunta10.jpeg',
+        respostaCorreta: 'C'
+    },
+    {
+        pergunta: 'Quem é o maior artilheiro da história da Copa do Mundo?',
+        opcoes: ['a) Pelé', 'b) Ronaldo', 'c) Miroslav Klose', 'd) Cristiano Ronaldo'],
+        imagem: 'pergunta11.jpeg',
+        respostaCorreta: 'C' // Miroslav Klose
+      },
+      {
+        pergunta: 'Qual país venceu a Eurocopa 2020?',
+        opcoes: ['a) Alemanha', 'b) França', 'c) Itália', 'd) Portugal'],
+        imagem: 'pergunta12.jpg',
+        respostaCorreta: 'C' // Itália
+      },
+      {
+        pergunta: 'Qual jogador é conhecido como "Rei do Futebol" e tem 3 Copas do Mundo em seu currículo?',
+        opcoes: ['a) Lionel Messi', 'b) Diego Maradona', 'c) Pelé', 'd) Cristiano Ronaldo'],
+        imagem: 'pergunta13.jpg',
+        respostaCorreta: 'C' // Pelé
+      },
+      {
+        pergunta: 'Qual time é conhecido como "Os Galáticos"?',
+        opcoes: ['a) Manchester United', 'b) Real Madrid', 'c) Barcelona', 'd) Bayern de Munique'],
+        imagem: 'pergunta14.jpg',
+        respostaCorreta: 'B' // Real Madrid
+      },
+      {
+        pergunta: 'Qual jogador é conhecido por ser o "Fenômeno"?',
+        opcoes: ['a) Ronaldinho', 'b) Zinedine Zidane', 'c) Ronaldo', 'd) Thierry Henry'],
+        imagem: 'pergunta15.jpg',
+        respostaCorreta: 'C' // Ronaldo
+      }
+    
 ];
 
 var perguntaAtual = 0;
-var respostasCorretas = 0;
-var respostasErradas = 0;
+
 
 
 function proximaPergunta() {
@@ -142,7 +141,7 @@ function proximaPergunta() {
 function contarTempo() {
     if (contador === 0) {
         clearInterval(temporizador);
-        pontos += pontosPerdidos;
+        pontos += pontosPerdidos; // Subtrai 2 pontos quando o tempo acaba
         proximaPergunta();
     } else {
         document.getElementById('tempo').innerHTML = contador + 's';
@@ -152,7 +151,7 @@ function contarTempo() {
 
 
 function responder() {
-    clearInterval(temporizador);
+    clearInterval(temporizador); // Limpa o temporizador atual
     var resposta = document.querySelector('input[name="opcao"]:checked');
     if (resposta) {
         respostas.push(resposta.value);
@@ -165,7 +164,7 @@ function responder() {
             pontos += 2; // Adiciona 2 pontos para cada pergunta acertada
         } else {
             respostaElement.classList.add('resposta-incorreta');
-            respostaElement.innerHTML = 'Que pena, você errou! A resposta correta é: ' + respostaCorreta + '.';
+            respostaElement.innerHTML = 'Que pena, você errou. A resposta correta é: ' + respostaCorreta + '.';
             pontos += -1; // Não adiciona pontos para perguntas erradas
         }
         document.getElementById('quiz-container').style.display = 'none';

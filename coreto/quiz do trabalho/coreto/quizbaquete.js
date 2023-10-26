@@ -100,8 +100,7 @@ var perguntas = [
 ];
 
 var perguntaAtual = 0;
-var respostasCorretas = 0;
-var respostasErradas = 0;
+
 
 
 function proximaPergunta() {
