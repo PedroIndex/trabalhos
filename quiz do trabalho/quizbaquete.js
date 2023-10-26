@@ -1,4 +1,4 @@
-var tempoLimite = 30; // Tempo limite de resposta em segundos
+var tempoLimite = 2; // Tempo limite de resposta em segundos
 var contador = tempoLimite;
 var temporizador;
 var respostas = []; // Array para armazenar as respostas do usuário
@@ -65,7 +65,37 @@ var perguntas = [
         opcoes: ['a) Stephen Curry', 'b)LeBron James ', 'c)Kareem Abdul-jb', 'd) Michael Jordan'],
         imagem: 'pontos.jpg',
         respostaCorreta: 'B'
-    }
+    },
+    {
+        pergunta: 'Quem detém o recorde de mais pontos marcados em uma única partida da NBA?',
+        opcoes: ['a) LeBron James', 'b) Wilt Chamberlain', 'c) Kobe Bryant', 'd) Larry Bird'],
+        imagem: 'pontos-record.jpg',
+        respostaCorreta: 'b' // Wilt Chamberlain
+      },
+      {
+        pergunta: 'Qual equipe da NBA é conhecida como os "Splash Brothers"?',
+        opcoes: ['a) Los Angeles Lakers', 'b) Houston Rockets', 'c) Golden State Warriors', 'd) Chicago Bulls'],
+        imagem: 'splash-brothers.jpg',
+        respostaCorreta: 'c' // Golden State Warriors
+      },
+      {
+        pergunta: 'Qual jogador é famoso por seu apelido "The Answer"?',
+        opcoes: ['a) Kobe Bryant', 'b) Allen Iverson', 'c) Tim Duncan', 'd) Shaquille O\'Neal'],
+        imagem: 'the-answer.jpg',
+        respostaCorreta: 'b' // Allen Iverson
+      },
+      {
+        pergunta: 'Quantos campeonatos da NBA o Chicago Bulls ganhou nos anos 1990, com Michael Jordan no time?',
+        opcoes: ['a) 3', 'b) 4', 'c) 5', 'd) 6'],
+        imagem: 'chicago-bulls.jpg',
+        respostaCorreta: 'd'
+      },
+      {
+        pergunta: 'Qual jogador detém o recorde de mais assistências na história da NBA?',
+        opcoes: ['a) Magic Johnson', 'b) Chris Paul', 'c) John Stockton', 'd) Steve Nash'],
+        imagem: 'assistencias.jpg',
+        respostaCorreta: 'c' // John Stockton
+      }
     // Restante das perguntas...
 ];
 
