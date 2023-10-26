@@ -1,4 +1,4 @@
-var tempoLimite = 2; // Tempo limite de resposta em segundos
+var tempoLimite = 10; // Tempo limite de resposta em segundos
 var contador = tempoLimite;
 var temporizador;
 var respostas = []; // Array para armazenar as respostas do usuário
@@ -70,31 +70,31 @@ var perguntas = [
         pergunta: 'Quem é o maior artilheiro da história da Copa do Mundo?',
         opcoes: ['a) Pelé', 'b) Ronaldo', 'c) Miroslav Klose', 'd) Cristiano Ronaldo'],
         imagem: 'pergunta11.jpeg',
-        respostaCorreta: 'c' // Miroslav Klose
+        respostaCorreta: 'C' // Miroslav Klose
       },
       {
         pergunta: 'Qual país venceu a Eurocopa 2020?',
         opcoes: ['a) Alemanha', 'b) França', 'c) Itália', 'd) Portugal'],
         imagem: 'pergunta12.jpg',
-        respostaCorreta: 'c' // Itália
+        respostaCorreta: 'C' // Itália
       },
       {
         pergunta: 'Qual jogador é conhecido como "Rei" e tem 3 Copas do Mundo em seu currículo?',
         opcoes: ['a) Lionel Messi', 'b) Diego Maradona', 'c) Pelé', 'd) Cristiano Ronaldo'],
         imagem: 'pergunta13.jpg',
-        respostaCorreta: 'c' // Pelé
+        respostaCorreta: 'C' // Pelé
       },
       {
         pergunta: 'Qual time é conhecido como "Os Galáticos"?',
         opcoes: ['a) Manchester United', 'b) Real Madrid', 'c) Barcelona', 'd) Bayern de Munique'],
         imagem: 'pergunta14.jpg',
-        respostaCorreta: 'b' // Real Madrid
+        respostaCorreta: 'B' // Real Madrid
       },
       {
         pergunta: 'Qual jogador é conhecido por ser o "Fenômeno"?',
         opcoes: ['a) Ronaldinho', 'b) Zinedine Zidane', 'c) Ronaldo', 'd) Thierry Henry'],
         imagem: 'pergunta15.jpg',
-        respostaCorreta: 'c' // Ronaldo
+        respostaCorreta: 'C' // Ronaldo
       }
     
 ];
